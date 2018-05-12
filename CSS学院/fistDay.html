@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第一天</title>
+	</head>
+	<style>
+       .content{
+       	  text-align: center;
+       	  width: 120px;
+       	  margin: 50px auto;
+       }
+       .content strong{
+       	  font-size: 20px;
+       	  -webkit-transition: color 1s cubic-bezier(0.25,0.3,0.5,1);
+       	  -ms-transition: color 1s cubic-bezier(0.25,0.3,0.5,1);
+       	  -moz-transition: color 1s cubic-bezier(0.25,0.3,0.5,1);
+       }
+       .content i{
+       	display: inline-block;
+       	width: 0px;
+       	border-bottom: 2px solid red;
+       	-webkit-transition: width 1s cubic-bezier(0.25,0.3,0.5,1);
+       	-ms-transition: width 1s cubic-bezier(0.25,0.3,0.5,1);
+       	-moz-transition: width 1s cubic-bezier(0.25,0.3,0.5,1);
+       	}
+       	.content button{
+       		width: 100%;
+       		box-sizing: border-box;
+       		border-radius: 5px;
+       		background-color: white;
+       		color: black;
+       		font-size: 20px;
+       		margin-top: 30px;
+       		height: 30px;
+       		border: 1px solid #ccc;
+       	}
+
+	</style>
+	<script>
+		var flag = 0;
+        function start(Node){
+        	
+        	if(flag == 0){
+        		document.getElementById("text").style.color = "blue";
+        	    document.getElementById("hr").style.width = "100%";
+        	    flag = 1;
+        	}else{
+        		document.getElementById("text").style.color = "black";
+        	    document.getElementById("hr").style.width = "0";
+        	    flag = 0;
+        	}
+
+        }
+    </script>
+	<body>
+	  <div id="content" class="content">
+	  	<strong id="text">百度前端学院</strong>
+	  	<i id="hr"></i>
+	  	<button onclick=start(this)>切换样式</button>
+	  </div>
+		
+		
+	</body>
+</html>

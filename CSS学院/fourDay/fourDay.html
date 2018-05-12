@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>卡片翻转</title>
+		<style>
+			.box{
+				position: relative;
+				width: 250px;
+				height: 350px;
+				margin: 100px auto;
+				overflow: ;
+			}
+			img{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.positive{
+			   transition: transform 1s,box-shadow 1s;
+			   -webkit-transition: -webkit-transform 1s box-shadow 1s; 
+			   -ms-transition: -ms-transform 1s box-shadow 1s;
+			   -moz-transition: -moz-transform 1s;
+			    backface-visibility: hidden; /*隐藏转过去的内容*/
+			}
+            .negative{
+			   transition: transform 1s;
+			   -webkit-transition: -webkit-transform 1s;
+			   -ms-transition: -ms-transform 1s;
+			   -moz-transition: -moz-transform 1s;
+			    transform: rotateY(-180deg);
+			   -webkit-transform: rotateY(-180deg);
+			   -ms-transform: rotateY(-180deg);
+			   -moz-transform: rotateY(-180deg);
+            }
+            .box:hover .positive{
+               transform: rotateY(180deg);
+			   -webkit-transform: rotateY(180deg);
+			   -ms-transform: rotateY(180deg);
+			   -moz-transform: rotateY(180deg);
+            }
+            .box:hover .negative{
+            	z-index: 1;
+               transform: rotateY(0deg);
+			   -webkit-transform: rotateY(0deg);
+			   -ms-transform: rotateY(0deg);
+			   -moz-transform: rotateY(0deg);
+			   backface-visibility: hidden;  /*隐藏转过去的内容*/
+            }
+		</style>
+	</head>
+	<body style="text-align: center;">
+		<div class="box">
+			<img class="negative" src="反面.jpg" >
+		    <img class="positive" src="正面.jpg" >
+		</div>
+	</body>
+</html>
